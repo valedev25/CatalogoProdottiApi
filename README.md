@@ -18,9 +18,10 @@ API REST per la gestione di un catalogo di prodotti, sviluppata in **.NET 8** co
 git clone <https://github.com/valedev25/CatalogoProdottiApi.git>
 cd CatalogoProdottiApi
 ```
---Per aprirlo direttamente con Visual Studio
-  start CatalogoProdottiApi.sln
 
+- Per aprirlo direttamente con Visual Studio
+  start CatalogoProdottiApi.sln
+```
 2. Ripristina i pacchetti:
 
 ```bash
