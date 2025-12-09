@@ -23,6 +23,9 @@ namespace CatalogoProdottiApi.Services
 
         public async Task<Prodotto> AddProdottoAsync(string nome, decimal prezzo, string categoria)
         {
+            //controllo se il prodotto è già esistente
+            await CheckProdottoExistsAsync(nome, categoria);
+
             var prodotto = Prodotto.Create(nome, prezzo, categoria);
             await _repo.AddAsync(prodotto);
             return prodotto;
@@ -32,6 +35,9 @@ namespace CatalogoProdottiApi.Services
         {
             var prodotto = await _repo.GetByIdAsync(id)
                 ?? throw ProdottoExceptions.NotFound(id);
+
+            //controllo se il prodotto è già esistente
+            await CheckProdottoExistsAsync(nome, categoria);
 
             prodotto.Update(nome, prezzo, categoria);
             await _repo.UpdateAsync(prodotto);
@@ -44,6 +50,17 @@ namespace CatalogoProdottiApi.Services
                 ?? throw ProdottoExceptions.NotFound(id);
 
             await _repo.DeleteAsync(id);
+        }
+
+        private async Task CheckProdottoExistsAsync(string nome, string categoria)
+        {
+            var prodottiEsistenti = await _repo.GetAllAsync();
+
+            if (prodottiEsistenti.Any(p =>  p.Nome.Equals(nome) &&
+                    p.Categoria.Equals(categoria)))
+            {
+                throw ProdottoExceptions.AlreadyExists(nome, categoria);
+            }
         }
     }
 }

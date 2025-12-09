@@ -25,6 +25,7 @@ namespace CatalogoProdottiApi.Middleware
                 {
                     ProdottoExceptions.ErrorType.NotFound => StatusCodes.Status404NotFound,
                     ProdottoExceptions.ErrorType.Invalid => StatusCodes.Status400BadRequest,
+                    ProdottoExceptions.ErrorType.AlreadyExists => StatusCodes.Status400BadRequest,
                     _ => StatusCodes.Status500InternalServerError
                 };
 

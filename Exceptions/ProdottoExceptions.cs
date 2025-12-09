@@ -6,7 +6,8 @@
         {
             NotFound,
             Invalid,
-            Unknown
+            Unknown,
+            AlreadyExists
         }
         public ErrorType Type { get; }
 
@@ -27,6 +28,9 @@
         // prodotto non trovato
         public static ProdottoExceptions NotFound(Guid id) =>
             new ProdottoExceptions($"Prodotto con ID {id} non trovato.", ErrorType.NotFound);
+
+        public static ProdottoExceptions AlreadyExists(string nome, string categoria) =>
+            new ProdottoExceptions($"Il prodotto '{nome}' nella categoria '{categoria}' esiste già.", ErrorType.AlreadyExists);
     }
 
 }
