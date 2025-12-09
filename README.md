@@ -134,13 +134,13 @@ Per la struttura del progetto in un contesto più grande, o di business, che ric
 ## Documentazione API
 ## Endpoints
 
-| Metodo | Endpoint | Request Body | Descrizione | Response
-|--------|---------|--------------|------------|----------|----------------|
-| GET    | `/api/prodotti` | — | Recupera tutti i prodotti | `200 OK` — Lista di `ProdottoResponseDto` | 
-| GET    | `/api/prodotti/{id}` | — | Recupera prodotto per ID | `200 OK` — `ProdottoResponseDto` | 
-| POST   | `/api/prodotti` | `ProdottoCUDto` | Crea un nuovo prodotto | `201 Created` — `ProdottoResponseDto` | 
-| PUT    | `/api/prodotti/{id}` | `ProdottoCUDto` | Aggiorna un prodotto esistente | `204 NoContent` |
-| DELETE | `/api/prodotti/{id}` | — | Elimina un prodotto | `204 NoContent` | 
+| Metodo | Endpoint | Request Body | Descrizione | Response |
+|--------|---------|--------------|------------|---------|
+| GET    | /api/prodotti         | —                  | Recupera tutti i prodotti              | 200 OK — Lista di ProdottoResponseDto |
+| GET    | /api/prodotti/{id}    | —                  | Recupera prodotto per ID              | 200 OK — ProdottoResponseDto |
+| POST   | /api/prodotti         | ProdottoCUDto      | Crea un nuovo prodotto                | 201 Created — ProdottoResponseDto |
+| PUT    | /api/prodotti/{id}    | ProdottoCUDto      | Aggiorna un prodotto esistente       | 204 NoContent |
+| DELETE | /api/prodotti/{id}    | —                  | Elimina un prodotto                   | 204 NoContent |
 
 
 ## DTO
