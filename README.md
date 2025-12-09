@@ -18,6 +18,8 @@ API REST per la gestione di un catalogo di prodotti, sviluppata in **.NET 8** co
 git clone <https://github.com/valedev25/CatalogoProdottiApi.git>
 cd CatalogoProdottiApi
 ```
+--Per aprirlo direttamente con Visual Studio
+  start CatalogoProdottiApi.sln
 
 2. Ripristina i pacchetti:
 
@@ -28,13 +30,13 @@ dotnet restore
 3. Avvia l’API:
 
 ```bash
-dotnet run
+dotnet run --urls "http://localhost:5000;https://localhost:5001"
 ```
 
 4. Apri **Swagger**:
 
 ```
-https://localhost:7141/swagger
+https://localhost:5001/swagger
 ```
 
 5. Testa gli endpoint con Swagger
