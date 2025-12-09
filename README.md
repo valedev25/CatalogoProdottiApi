@@ -20,6 +20,7 @@ cd CatalogoProdottiApi
 ```
 
 - Per aprirlo direttamente con Visual Studio
+```bash
   start CatalogoProdottiApi.sln
 ```
 2. Ripristina i pacchetti:
