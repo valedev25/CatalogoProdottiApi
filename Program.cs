@@ -1,8 +1,11 @@
+using CatalogoProdottiApi.Domain.Interfaces;
 using CatalogoProdottiApi.Middleware;
+using CatalogoProdottiApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IProdottoRepository, ProdottoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
