@@ -15,7 +15,7 @@ API REST per la gestione di un catalogo di prodotti, sviluppata in **.NET 8** co
 1. Clona il repository:
 
 ```bash
-git clone <https://github.com/valedev25/CatalogoProdottiApi.git>
+git clone https://github.com/valedev25/CatalogoProdottiApi.git
 cd CatalogoProdottiApi
 ```
 
