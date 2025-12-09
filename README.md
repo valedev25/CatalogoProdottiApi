@@ -48,7 +48,7 @@ https://localhost:5001/swagger
 - **SOLID e OOP**
 - **Separazione in livelli**
 - Controller → Service → Repository → DbContext  (separazione delle responsabilità (SRP))
-Ho cercato di semplificare la soluzione rispettano le direttive.
+Ho cercato di semplificare la soluzione rispettando le direttive.
 
 - **Pattern Repository**
   Separazione tra logica di business e accesso ai dati.
