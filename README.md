@@ -40,62 +40,11 @@ https://localhost:7141/swagger
 5. Testa gli endpoint con Swagger
 
 
-## Struttura del progetto
-
-CatalogoProdottiApi
-│
-├─ Controllers
-│   └─ ProdottiController.cs
-│
-├─ Data
-│   └─ AppDbContext.cs
-│
-├─ Domain
-│   ├─ Entities
-│   │   └─ Prodotto.cs
-│   │
-│   └─ Interfaces
-│       ├─ IProdottoRepository.cs
-│       └─ IProdottoService.cs
-│
-├─ Dtos
-│   ├─ ProdottoCUDto.cs
-│   └─ ProdottoResponseDto.cs
-│
-├─ Exceptions
-│   └─ ProdottoExceptions.cs
-│
-├─ Middleware
-│   └─ ExceptionMiddleware.cs
-│
-├─ Repositories
-│   └─ ProdottoRepository.cs
-│
-├─ Services
-│   └─ ProdottoService.cs
-└── Program.cs
-
-
 ## Scelte architetturali
 - **SOLID e OOP**
 - **Separazione in livelli**
 - Controller → Service → Repository → DbContext  (separazione delle responsabilità (SRP))
-
 Ho cercato di semplificare la soluzione rispettano le direttive.
-Per la struttura del progetto in un contesto più grande, o di business, che richiedeva la gestione di molti più dati, servizi e più compiti, avrei optato per una struttura a più layer con delle librerie a supporto dell'api. Cioè avrei diviso la soluzione:
-
-- CatalogoProdottiApi(progetto principale)
-   - Settings
-   - Controller
-   - Middleware
-- CatalogoProdottiApi.Data (libreria .Net)
-   - DbContext 
-   - Repository
-- CatalogoProdottiApi.Domain (libreria .Net)
-   - Entità
-   - Interfacce
-- CatalogoProdottiApi.Service (libreria .Net)
-   - Servizio
 
 - **Pattern Repository**
   Separazione tra logica di business e accesso ai dati.
@@ -120,6 +69,20 @@ Per la struttura del progetto in un contesto più grande, o di business, che ric
 - Aggiungere database SQL Server  
 - Implementare unit test e integration test  
 - Aggiungere log centralizzato  
+- Per la struttura del progetto in un contesto più grande, o di business, che richiedeva la gestione di molti più dati, servizi e più compiti, opterei per una struttura a più layer con delle librerie a supporto dell'api. Cioè dividerei la soluzione in:
+
+- CatalogoProdottiApi(progetto principale)
+   - Settings
+   - Controller
+   - Middleware
+- CatalogoProdottiApi.Data (libreria .Net)
+   - DbContext 
+   - Repository
+- CatalogoProdottiApi.Domain (libreria .Net)
+   - Entità
+   - Interfacce
+- CatalogoProdottiApi.Service (libreria .Net)
+   - Servizio
 
 
 ## Entità Prodotto
